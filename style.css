@@ -45,7 +45,7 @@ body {
 
 .header {  /* Header Section*/
   grid-area: header ;
-/*  position: sticky; */
+ position: sticky;
   top: 0; left: 0;
   padding: 0;
   width: 100%;
@@ -78,8 +78,27 @@ body {
   justify-content:center;
 }
 .navbar{
-  display: none;
+  display: block;
+position: absolute;
+top: 100%; left: 0; right: 0;
+background:var(--black);
+border-top: 1px solid rgba(0,0,0,0.5);
+border-bottom: 1px solid rgba(0,0,0,0.5);
+padding: 2px;
+clip-path: polygon(0 0, 100% 0, 0 0);
 }
+header .navbar.active{
+clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.navbar a{
+  display: block;
+  padding: 1.5rem;
+  margin: 1rem;
+  font-size: x-large;
+  background-color:var(--lila);
+
+}
+
 .navbar a:hover,
 .navbar a.active {
   filter: drop-shadow(0 10px 4px #ce04fb);
@@ -101,13 +120,15 @@ body {
   font-size: 3.3rem;
   background: var(--black);
   color: var(--light-pink);
-  filter:drop-shadow(0 10px 5px #ce04fb);
+  filter:drop-shadow(0 10px 5px #0da5c7);
 }
 .navbar ul li{
   list-style:none;
   display: inline;
   transition: all 0.3s ease 0s;
  }
+ 
+
 
  .btn{
   padding: 5px 35px;
@@ -128,7 +149,7 @@ body {
   font-weight: 900;
   filter:drop-shadow(0 10px 5px #ce04fb);
  }
- #navbar-contact{
+ #navbar-contact{  /*botton conctat in  header*/
   display: none;
 }
 
@@ -351,7 +372,7 @@ span {
     grid-template:  
       "header  header"  120px
       "main    main"    900px
-      "sidebar sidebar"    500px
+      "sidebar sidebar"    800px
       "services services" 700px
       "content content"   300px
       "footer  footer"  100px /
@@ -384,7 +405,7 @@ span {
     grid-template:
       "header  header  header"     120px
       "main     main    main"       850px
-      "sidebar  sidebar  sidebar "  850px
+      "sidebar  sidebar  sidebar "  1100px
       "services services services " 600px
       "content  content  content " 400px
       "footer   footer   footer"   180px /
@@ -427,26 +448,26 @@ span {
      font-weight: 900;
      font-size: 27px;
     }
-    
-    .about .about-content h3{
-      font-size:x-large;
-
+    .home-img img{
+      margin-top: 5rem;
+      width: 300px;
+    }
     }  
     .about .about-content p{
       font-size:large;
     }
-}
-@media (min-width: 1440px) {
+
+/*@media (min-width: 1440px) {
   .grid-container {
     grid-template:
       "header  header  header"     100px
       "main     main    main"       700px
-      "sidebar  sidebar  sidebar "  400px
+      "sidebar  sidebar  sidebar "  800px
       "services  services  services "  500px
       "footer   footer   footer"   180px /
       300px      auto     600px;
   }
-}
+} */
 
 .popup-image{
   position: fixed;
