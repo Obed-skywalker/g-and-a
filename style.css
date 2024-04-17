@@ -354,10 +354,44 @@ span {
     font-size: large;
 }
 
-.content {
-    grid-area: content;
-    background-color: #afd6af;
+.contact {
+    grid-area: contact;
+    background-color: var(--light-pink);
+  padding-top: 100px;
 }
+.contact h2{
+  margin: 3rem;
+  font-size: x-large;
+}
+.contact form{
+  max-width: 70rem;
+  margin: 1rem auto;
+  text-align: center;
+  margin: auto;
+}
+.contact form .input-box{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.contact form .input-box input,
+.contact form textarea{
+width: 100%;
+padding: 1.5rem;
+font-size: large;
+color: var(--light-pink);
+background: var(--purple);
+border-radius: 15px;
+margin: 10px 0px;
+box-shadow: var(--box-shadow);
+}
+
+
+.contact form .btn{
+  margin-top: 1rem;
+  border-radius: 20px;
+}
+
 .grid-container {
   display: grid;
   gap: 10px;
@@ -366,7 +400,7 @@ span {
     "main"    auto
     "sidebar" 750px
     "services"  2000px
-    "content"  750px
+    "contact"  800px
     "footer"  180px;
 }
 
@@ -378,7 +412,7 @@ span {
       "main    main"    900px
       "sidebar sidebar"    900px
       "services services" 1960px
-      "content content"   300px
+      "contact  contact"   830px
       "footer  footer"  100px /
       300px    auto;
   }
@@ -467,7 +501,7 @@ span {
       "main     main    main"       720px
       "sidebar  sidebar  sidebar "  1100px
       "services services services " 800px
-      "content  content  content " 700px
+      "contact  contact  contact " 850px
       "footer   footer   footer"   180px /
       300px      auto     600px;
   }
