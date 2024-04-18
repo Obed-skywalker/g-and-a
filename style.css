@@ -261,11 +261,12 @@ span {
   margin: 10px;
   padding-top: 125px;
   width: content;
+  margin-bottom: 3rem;
 }
 .about .logo img{
   border-radius: 20px;
   cursor: pointer;
-  width: 35vw;
+  width: 45vw;
   box-shadow: var(--box-shadow);
 }
 .about .about-content{
@@ -297,23 +298,25 @@ span {
 .services {  /*Services section */
   grid-area: services;
   background-color:var(--light-pink);
-  padding-top: 80px;
+  padding-top: 120px;
 }
 
 .service-container{
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   background: var(--purple);
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   gap: 2rem;
   padding: 25px;
 }
 .service-container .service-box{
   flex: 1 1 30rem;
   max-width: 37rem;
+  height: 570px;
   background: var(--light-pink);
-  padding: 3rem 2rem 4rem;
+  padding: 2rem 1rem 4rem;
   border: 2px solid var(--green);
   transition: .5 ease;
   color: var(--light-pink);
@@ -333,6 +336,7 @@ span {
 }
 .services h1{ /* header  Our services */
   margin: 2rem;
+  font-size: 30px;
   color: var(--purple);
 }
 .services h3{   /* header  box caontainer=  events decor  */
@@ -367,7 +371,7 @@ span {
   max-width: 70rem;
   margin: 1rem auto;
   text-align: center;
-  margin: auto;
+  margin: 1.5rem;
 }
 .contact form .input-box{
   display: flex;
@@ -398,9 +402,9 @@ box-shadow: var(--box-shadow);
   grid-template:
     "header"  120px
     "main"    auto
-    "sidebar" 750px
-    "services"  2000px
-    "contact"  800px
+    "sidebar" auto
+    "services"  auto
+    "contact"  auto
     "footer"  180px;
 }
 
@@ -410,9 +414,9 @@ box-shadow: var(--box-shadow);
     grid-template:  
       "header  header"  120px
       "main    main"    900px
-      "sidebar sidebar"    900px
-      "services services" 1960px
-      "contact  contact"   830px
+      "sidebar sidebar"    auto
+      "services services" auto
+      "contact  contact"   auto
       "footer  footer"  100px /
       300px    auto;
   }
@@ -480,18 +484,12 @@ box-shadow: var(--box-shadow);
   .about .about-content p{
     font-size:x-large;
   }
-
-  .service-container .service-box{
-    flex: 1 1 30rem;
-    max-width: 37rem;
-    background: var(--light-pink);
-    padding: 3rem 2rem 4rem;
-    border: 2px solid var(--green);
-    transition: .5 ease;
-    color: var(--light-pink);
-    box-shadow: var(--box-shadow);
-    border-radius: 20px;
-    justify-content: center;
+ 
+  .service-container {
+    flex: 1 1 37rem; 
+  }
+  .contact form{
+    margin: auto;
   }
 }
 @media (min-width: 910px) {
@@ -499,11 +497,19 @@ box-shadow: var(--box-shadow);
     grid-template:
       "header  header  header"     120px
       "main     main    main"       720px
-      "sidebar  sidebar  sidebar "  1100px
-      "services services services " 800px
+      "sidebar  sidebar  sidebar "  auto
+      "services services services " auto 
       "contact  contact  contact " 850px
       "footer   footer   footer"   180px /
       300px      auto     600px;
+  }
+  .popup-image img{
+  object-fit: cover;
+  height: 95%;
+  }
+  .popup-image span:hover{
+    color: var(--lila);
+    background-color: var(--purple);
   }
   .navbar a{   /* nav bar menu */
     font-size: x-large;
@@ -555,31 +561,31 @@ box-shadow: var(--box-shadow);
   top:2.5%; right:4rem;
   font-size: xx-large;
   font-weight: bolder;
-  color: var(--black);
-  background: var(--light-pink);
-  width: 37px;
-  height: 37px;
+  background:var(--lila);
+  color: var(--light-pink);
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   cursor: pointer;
   z-index: 100;
-  border: 2px solid var(--lila);
+  border: 2px solid var(--light-pink);
 }
 .popup-image span:hover{
-  background:var(--lila);
-  color: var(--light-pink);
+  color: var(--black);
+  background: var(--light-pink);
   width: 40px;
   height: 40px;  
   font-weight: bold;
-  border: 2px solid var(--light-pink);
+  border: 2px solid var(--lila);
 }
 .popup-image img{
   position: absolute;
   top:50%; left: 50%;
   transform: translate(-50%,-50%);
-  border-radius: 10px;
-  width: 650px;
+  border-radius: 20px;
+  width: 95%;
   object-fit: cover;
   box-shadow: var(--box-shadow);
   border: 3px solid var(--green);
