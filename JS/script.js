@@ -29,3 +29,13 @@ document.querySelectorAll('.logo img').forEach(logo =>{
 document.querySelector('.popup-image span').onclick = () =>{
     document.querySelector('.popup-image').style.display = 'none';
 }
+
+/*  scroll reveal */
+ScrollReveal({
+    distance: '80px',
+    duration: 2000,
+    delay:200,
+});
+
+ScrollReveal().reveal('.home-content, heading',{origin: 'top'});
+ScrollReveal().reveal('.service-container, .contact form',{origin: 'bottom'});
