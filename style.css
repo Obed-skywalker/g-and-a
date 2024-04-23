@@ -294,11 +294,12 @@ span {
   font-size: 25 px;
   border-radius: 50px;
 }
-
+#servicess {
+  padding-top: 100px;
+}
 .services {  /*Services section */
   grid-area: services;
   background-color:var(--light-pink);
-  padding-top: 80px;
  
   align-items: center;
   justify-content: center;
@@ -328,13 +329,13 @@ span {
   justify-content: center;
 }
 .service-container .service-box  img{
-  max-width:280px;
-  max-height: 305px;
+  max-width:270px;
+  max-height: 290px;
   margin: auto;
   border-radius: 10px;
 }
 .service-container .service-box:hover{
-  transform: scale(1.03);
+  transform: scale(.95);
 
 }
 .services h1{ /* header  Our services */
@@ -532,10 +533,11 @@ box-shadow: var(--box-shadow);
   background:var(--lila);
   top: 0;
   bottom: 0;
-  width: 50%;
+  width: 20%;
   height: 100%;
   cursor: grab;
   border-radius: inherit;
+  display: none;
 }
 
 .slider-scrollbar .scrollbar-thumb:active {
