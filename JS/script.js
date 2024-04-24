@@ -108,3 +108,25 @@ const initSlider = () => {
 
 window.addEventListener("resize", initSlider);
 window.addEventListener("load", initSlider);
+
+// send email from Form
+const btn = document.getElementById('btn-email');
+
+document.getElementById('form')
+.addEventListener('submit', function(event) {
+    event.preventDefault();
+ 
+    btn.value = 'Sending...';
+ 
+    const serviceID = 'default_service';
+    const templateID = 'template_iz8zmzq';
+ 
+    emailjs.sendForm(serviceID, templateID, this)
+     .then(() => {
+       btn.value = 'Send Email';
+       alert('Sent!');
+     }, (err) => {
+       btn.value = 'Send Email';
+       alert(JSON.stringify(err));
+     });
+ });
