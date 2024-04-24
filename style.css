@@ -187,7 +187,8 @@ clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 span {
-  color: var(--lila);}
+  color: var(--lila);
+}
 .home-content h1{
   font-size: 5rem;
   font-weight: 700;
@@ -216,13 +217,16 @@ span {
   background: var(--black);
   color: var(--light-pink);
   margin: 8px;
+  filter:drop-shadow(0 5px 5px #0da5c7);
 }
 .social-media a:hover{
-  background: var(--purple);
-  color: var(--light-pink);
-  filter:drop-shadow(0 10px 5px #0da5c7);
+  background: var(--light-pink);
+  color: var(--purple);
+  filter:drop-shadow(0 10px 5px #ce04fb);
+  
 }
 #learn-more{
+  margin-top: 15px;
   font-size: 20 px;
   border-radius: 50px;
   color: var(--light-pink);
@@ -304,24 +308,24 @@ span {
   align-items: center;
   justify-content: center;
 }
-
 .service-container{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  background: var(--purple);
+  background: var(--light-pink);
   justify-content: center;
   align-items: center;
   gap: 2rem;
   padding: 25px;
+  margin-bottom: 2rem;
 }
 .service-container .service-box{
-  flex: 1 1 30rem;
-  max-width: 30rem;
+  flex: 1 1 35rem;
+  max-width: 35rem;
   max-height: 570px;
   background: var(--light-pink);
   padding: 2rem 1rem 4rem;
-  border: 2px solid var(--green);
+  border: 2px solid var(--lila);
   transition: .5 ease;
   color: var(--light-pink);
   box-shadow: var(--box-shadow);
@@ -335,7 +339,7 @@ span {
   border-radius: 10px;
 }
 .service-container .service-box:hover{
-  transform: scale(.95);
+  transform: scale(.98);
 
 }
 .services h1{ /* header  Our services */
@@ -443,8 +447,13 @@ box-shadow: var(--box-shadow);
   border: 3px solid var(--green);
   padding: 5px;
 } 
-#events-container{
+#servbox-events{ /* container of the List of events container */
+  max-width: 420px; 
+}
+#services-event{   /*-- Container of the section --*/  
   background: var(--light-pink);
+  padding-top: 0px;
+  
 }
 .slide-container{
   position: relative;
@@ -466,7 +475,7 @@ box-shadow: var(--box-shadow);
   height: 50px;
   width: 50px;
   z-index: 5;
-  color: #fff;
+  color:var(--light-pink);
   display: flex;
   cursor: pointer;
   font-size: 2.2rem;
@@ -475,16 +484,17 @@ box-shadow: var(--box-shadow);
   justify-content: center;
   border-radius: 50%;
   transform: translateY(-50%);
-  box-shadow: var(--box-shadow);
+  filter:drop-shadow(0 10px 5px #0da5c7);
 }
 
 .slider-wrapper .slide-button:hover {
   background:var(--black);
+  filter:drop-shadow(0 10px 5px #ce04fb);
 }
 
 .slider-wrapper .slide-button#prev-slide {
   left: -5px;
-  display: block;
+  display: flex;
 }
 .slider-wrapper .slide-button#next-slide {
   right: -5px;
@@ -497,7 +507,9 @@ box-shadow: var(--box-shadow);
   list-style: none;
   margin: 0px;
   overflow-x: auto;
-  scrollbar-width:auto;
+  scrollbar-width:none;
+  cursor: pointer;
+  border-radius: 10px;
 }
 .slider-wrapper .image-list::-webkit-scrollbar {
   display: flex;
@@ -507,6 +519,7 @@ box-shadow: var(--box-shadow);
   width: 425px;
   height: 400px;
   object-fit: cover;
+  border-radius: 15px;
 }
 .slide-container .slider-scrollbar{
   height: 24px;
@@ -515,7 +528,7 @@ box-shadow: var(--box-shadow);
   align-items: center;
 }
 .slider-scrollbar .scrollbar-track {
-  background: #ccc;
+  background: var(--light-pink);
   width: 100%;
   height: 2px;
   display: flex;
@@ -530,14 +543,14 @@ box-shadow: var(--box-shadow);
 
 .slider-scrollbar .scrollbar-thumb {
   position: absolute;
-  background:var(--lila);
+  background:var(--purple);
   top: 0;
   bottom: 0;
   width: 20%;
   height: 100%;
   cursor: grab;
   border-radius: inherit;
-  display: none;
+  display: block;
 }
 
 .slider-scrollbar .scrollbar-thumb:active {
@@ -554,7 +567,22 @@ box-shadow: var(--box-shadow);
   top: -10px;
   bottom: -10px;
 }
+#titleotherservices{
+  margin-top: 2rem;
+  color: #00cbf9;
+}
+.more-services{
+  margin: 3rem;
+  display: flex;
+  padding: 1.5rem;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  flex-direction:column ;
 
+}
+.more-services a{
+  margin: 10px;
+}
 .grid-container {
   display: grid;
   gap: 10px;
@@ -648,11 +676,15 @@ box-shadow: var(--box-shadow);
   .about .about-content p{
     font-size:x-large;
   }
-  .services {
-    padding-top: 110px;
+  .servicess {
+    padding-top: 80px;
   }
-  .service-container {
-    flex: 1 1 37rem; 
+  .service-container .service-box{
+    flex: 1 1 30rem;
+    max-width: 30rem;
+  }
+  .more-services{
+    flex-direction: row;
   }
   .contact form{
     margin: auto;
@@ -695,7 +727,9 @@ box-shadow: var(--box-shadow);
    .navbar ul li{
      display: inline;
     }
-    
+    .service-container {
+      flex-wrap: nowrap;
+     }
  }
  
    

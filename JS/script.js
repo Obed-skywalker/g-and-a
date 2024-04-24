@@ -38,14 +38,14 @@ ScrollReveal({
 });
 
 ScrollReveal().reveal('.home-content, heading',{origin: 'top'});
-ScrollReveal().reveal('.service-container, .contact form',{origin: 'bottom'});
+ScrollReveal().reveal('.service-container',{origin: 'bottom'});
 
 const initSlider = () => {
-    const imageList = document.querySelector(".slider-wrapper .slide-list");
+    const slideList = document.querySelector(".slider-wrapper .slide-list");
     const slideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
     const sliderScrollbar = document.querySelector(".slide-container .slider-scrollbar");
     const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
-    const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
+    const maxScrollLeft = slideList.scrollWidth - slideList.clientWidth;
     
     // Handle scrollbar thumb drag
     scrollbarThumb.addEventListener("mousedown", (e) => {
@@ -63,7 +63,7 @@ const initSlider = () => {
             const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
             
             scrollbarThumb.style.left = `${boundedPosition}px`;
-            imageList.scrollLeft = scrollPosition;
+            slideList.scrollLeft = scrollPosition;
         }
 
         // Remove event listeners on mouse up
@@ -81,26 +81,26 @@ const initSlider = () => {
     slideButtons.forEach(button => {
         button.addEventListener("click", () => {
             const direction = button.id === "prev-slide" ? -1 : 1;
-            const scrollAmount = imageList.clientWidth * direction;
-            imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
+            const scrollAmount = slideList.clientWidth * direction;
+            slideList.scrollBy({ left: scrollAmount, behavior: "smooth" });
         });
     });
 
      // Show or hide slide buttons based on scroll position
     const handleSlideButtons = () => {
-        slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
-        slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
+        slideButtons[0].style.display = slideList.scrollLeft <= 0 ? "none" : "flex";
+        slideButtons[1].style.display = slideList.scrollLeft >= maxScrollLeft ? "none" : "flex";
     }
 
     // Update scrollbar thumb position based on image scroll
     const updateScrollThumbPosition = () => {
-        const scrollPosition = imageList.scrollLeft;
+        const scrollPosition = slideList.scrollLeft;
         const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
         scrollbarThumb.style.left = `${thumbPosition}px`;
     }
 
     // Call these two functions when image list scrolls
-    imageList.addEventListener("scroll", () => {
+    slideList.addEventListener("scroll", () => {
         updateScrollThumbPosition();
         handleSlideButtons();
     });
