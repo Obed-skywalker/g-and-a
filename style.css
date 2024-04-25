@@ -94,7 +94,7 @@ clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   display: block;
   padding: 1.5rem;
   margin: 1rem;
-  font-size: x-large;
+  font-size: 30px;
   background-color:var(--lila);
 }
 
@@ -134,7 +134,6 @@ clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
  }
  #navbar-contact:hover{
   filter:drop-shadow(0 10px 5px #0da5c7);
- 
  }
 
 
@@ -369,14 +368,23 @@ span {
 .contact {
     grid-area: contact;
     background-color: var(--light-pink);
-  padding-top: 100px;
+    padding-top: 100px;
+}
+.contactus-container{
+  width: 100%;
+  padding: 1rem;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 .contact h2{
   margin: 3rem;
   font-size: x-large;
 }
 .contact form{
-  max-width: 70rem;
+  max-width: 60rem;
   margin: 1rem auto;
   text-align: center;
   margin: 1.5rem;
@@ -402,6 +410,34 @@ box-shadow: var(--box-shadow);
   border-radius: 20px;
   margin-bottom: 2rem;
 }
+.contact .call{    /* call container */
+  width: 340px;
+  height: 470px;
+  border-radius: 20px;
+  padding-top: 25px;
+  margin: auto;
+  background-color:var(--light-pink);
+  display: inline-block;
+  transition: transform 0.5s, top;   
+  text-align: center;
+  border: 1px solid var(--lila);
+  box-shadow: var(--box-shadow);
+}
+.contact  .call img{
+  border: 1px solid var(--purple);
+  max-width:160px;
+  border-radius: 50%;
+  padding: 5px;
+}
+.contact .call a{   /* href to snap looks like a btn */
+  width: 150px;
+  text-decoration:none ;
+  text-align: center;
+  margin: 10px;
+  padding: 10px ;
+  font-size: 19px;
+  border-radius: 10px;
+ }
 .popup-image{    /*popup image */
   position: fixed;
   top: 0%; left: 0;
@@ -467,7 +503,7 @@ box-shadow: var(--box-shadow);
 .slider-wrapper {
   position: relative;
 }
-.slider-wrapper .slide-button {
+.slider-wrapper .slide-button {  /*  hide de btns < >  on multiple slides*/
   position: absolute;
   top: 50%;
   outline: none;
@@ -494,10 +530,11 @@ box-shadow: var(--box-shadow);
 
 .slider-wrapper .slide-button#prev-slide {
   left: -5px;
-  display: flex;
+  display: none; /*  hide de btns < >  on multiple slides   channge this to flex*/
 }
 .slider-wrapper .slide-button#next-slide {
   right: -5px;
+  display: none; /*  hide de btns < >  on multiple slides*/
 }
 .slider-wrapper .slide-list{
   display: grid;
@@ -507,7 +544,7 @@ box-shadow: var(--box-shadow);
   list-style: none;
   margin: 0px;
   overflow-x: auto;
-  scrollbar-width:none;
+  scrollbar-width:flex;
   cursor: pointer;
   border-radius: 10px;
 }
@@ -550,7 +587,7 @@ box-shadow: var(--box-shadow);
   height: 100%;
   cursor: grab;
   border-radius: inherit;
-  display: block;
+  display: none;   /*  hide de btns < >  on multiple slides*/
 }
 
 .slider-scrollbar .scrollbar-thumb:active {
@@ -729,6 +766,9 @@ box-shadow: var(--box-shadow);
     }
     .service-container {
       flex-wrap: nowrap;
+     }
+     .contactus-container{
+      display: flex;
      }
  }
  

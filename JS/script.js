@@ -86,11 +86,11 @@ const initSlider = () => {
         });
     });
 
-     // Show or hide slide buttons based on scroll position
-    const handleSlideButtons = () => {
-        slideButtons[0].style.display = slideList.scrollLeft <= 0 ? "none" : "flex";
-        slideButtons[1].style.display = slideList.scrollLeft >= maxScrollLeft ? "none" : "flex";
-    }
+     // Show or hide slide buttons based on scroll position    hide becuse multiple slides
+     //   const handleSlideButtons = () => {
+     //   slideButtons[0].style.display = slideList.scrollLeft <= 0 ? "none" : "flex";
+     //   slideButtons[1].style.display = slideList.scrollLeft >= maxScrollLeft ? "none" : "flex";
+    //    }
 
     // Update scrollbar thumb position based on image scroll
     const updateScrollThumbPosition = () => {

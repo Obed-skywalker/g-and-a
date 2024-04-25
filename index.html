@@ -135,16 +135,26 @@
 
     <section class="contact" id="contact"><!-- contact Section-->
         <h2 class="heading">Contact<span>us</span></h2>
-        <form id="form">
-            <div class="input-box">
-                <input type="text" name="name"  placeholder="Full Name" required>
-                <input type="number" name="phone" placeholder="Phone Number" required>             
-                <input type="text" name="email" placeholder="email address" required>
-                <input type="text" name="subject" placeholder="email subject">
-            </div>
-            <textarea name="message" cols="30" rows="10" placeholder="Type Your Message"></textarea>
-            <input type="submit" id="btn-email" value="Send Message" class="btn">
-        </form>
+        <div class="contactus-container">
+            <form id="form">
+                <div class="input-box">
+                    <input type="text" name="name"  placeholder="Full Name" required>
+                    <input type="number" name="phone" placeholder="Phone Number" required>             
+                    <input type="text" name="email" placeholder="email address" required>
+                    <input type="text" name="subject" placeholder="email subject">
+                </div>
+                <textarea name="message" cols="30" rows="8" placeholder="Type Your Message"></textarea>
+                <input type="submit" id="btn-email" value="Send Message" class="btn">
+            </form>
+            <h2><span>OR</span></h2>
+            <div class="call" id="call">
+                <h1>Give us a <span>CALL</span> or a <span>TEXT</span> </h1><br>
+                <img src="images/logo.jpg">
+                <h2>G & A<br>Magical Parties</h2>  <br><br><br>    
+                <a class="btn" href="tel:(620)-682-3981" id="footnum"><i class="fa fa-phone" ></i> PhoneCall</a>
+                <a class="btn" href="tel:+1(620)-682-3981" id="btnsms2"><i class="fa fa-message" ></i> Send Text</a>
+            </div>  
+        </div>
     </section> <!-- END Contact Section-->
 
     <footer class="footer"> <!-- Footer-->
