@@ -286,7 +286,7 @@ span {
   color:var(--light-pink)
 }
 .about .about-content h1{
- 
+  padding-top: 10px;
   color: var(--purple);
 }
 .about .about-content p{
