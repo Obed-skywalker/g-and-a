@@ -336,10 +336,15 @@ span {
   margin: auto;
   border-radius: 10px;
 }
-.service-container .service-box:hover{
-  transform: scale(.98);
-
+.service-box:hover{
+  filter:drop-shadow(0 10px 5px #ce04fb); 
 }
+.service-container .service-box:not(:hover){
+  transform: scale(.95);
+  opacity:.6;
+}
+
+
 .services h1{ /* header  Our services */
   margin: 2rem;
   font-size: 30px;

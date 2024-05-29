@@ -87,13 +87,13 @@ const initSlider = () => {
     });
 
      // Show or hide slide buttons based on scroll position    hide becuse multiple slides
-     //   const handleSlideButtons = () => {
-     //   slideButtons[0].style.display = slideList.scrollLeft <= 0 ? "none" : "flex";
-     //   slideButtons[1].style.display = slideList.scrollLeft >= maxScrollLeft ? "none" : "flex";
-    //    }
+       const handleSlideButtons = () => {
+       slideButtons[0].style.display = slideList.scrollLeft <= 0 ? "none" : "flex";
+        slideButtons[1].style.display = slideList.scrollLeft >= maxScrollLeft ? "none" : "flex";
+         }
 
     // Update scrollbar thumb position based on image scroll
-    const updateScrollThumbPosition = () => {
+        const updateScrollThumbPosition = () => {
         const scrollPosition = slideList.scrollLeft;
         const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
         scrollbarThumb.style.left = `${thumbPosition}px`;
